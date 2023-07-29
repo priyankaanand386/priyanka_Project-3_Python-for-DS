@@ -1,0 +1,27 @@
+Error: Input X contains NaN.
+RandomForestClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\model.py", line 39, in <module>
+    train_model()
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\model.py", line 30, in train_model
+    model.fit(X_train, y_train)
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\base.py", line 1151, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 348, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\base.py", line 621, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\utils\validation.py", line 1147, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\utils\validation.py", line 959, in check_array
+    _assert_all_finite(
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\utils\validation.py", line 124, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Kanvar\Software course\show_case_projects\Kannan Bank\venv\Lib\site-packages\sklearn\utils\validation.py", line 173, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+RandomForestClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
